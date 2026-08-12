@@ -47,7 +47,7 @@
 
 ## ❤️ 致谢开发者 ❤️
 
-感谢团队成员与社区参与者的共建，每一份提交都让项目变得更好。
+从新手到核心，从旁观到主笔，感谢每一位在项目成长路上留下足迹的开发者。
 
 <p align="left">
 <a href="https://github.com/furrynaling-alt"><img src="https://avatars.githubusercontent.com/u/309368028?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
@@ -58,6 +58,8 @@
 </p>
 
 ## 🧡 鸣谢  & 贡献者
+
+最好的回馈，是让项目成为下一个人的“参考项目”。感谢你们照亮我们的光。
 
 <p align="left">
 <a href="https://github.com/AngHarish"><img src="https://avatars.githubusercontent.com/u/209350675?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
