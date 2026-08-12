@@ -43,12 +43,11 @@
 
 ## ❤️ 致谢 & 贡献者
 
-感谢所有社区贡献者提交PR，持续为本项目提供改进。欢迎提交PR参与项目迭代。
+感谢团队成员与社区参与者的共建，每一份提交都让项目变得更好。
 
-<a href="https://github.com/open-HNBC/HNBCTeam/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=open-HNBC/HNBCTeam" />
-</a>
-
+<p align="left">
+<a href="https://github.com/furrynaling-alt"><img src="https://avatars.githubusercontent.com/u/309368028?v=4" width="50" height="50" alt="" style="max-width: 100%;"></a>
+</p>
 
 ## 📄 License
 
