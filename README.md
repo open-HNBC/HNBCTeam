@@ -11,42 +11,59 @@
 
 ## 📖 团队介绍
 
-**OPENHNBC（海纳柏舛）** 是一个开源创作团队。
-业务覆盖前端开发、后端服务、工具研发、IP内容创作，致力于产出实用、轻量化的开源项目。
-
-团队划分岗位：开发、运维、美术、社区运营、法务。
-每一位伙伴发挥自身所长，共同推进项目迭代演进。
+**OPENHNBC（海纳柏舛）** 是一个面向技术与内容创作的开源创作团队。
+业务覆盖前端开发、后端服务、工具研发、IP内容创作，致力于产出实用、轻量化、可落地的开源项目，兼顾技术探索与内容表达。
+ 
+团队内部划分岗位：开发、运维、美术、运营、后端等。
+没有固化的层级束缚，每一位伙伴都可以发挥自身所长，在擅长的领域输出价值，共同推进项目迭代演进，打磨每一份交付成果。
+ 
+我们相信技术不止是代码，更是连接人的载体；鼓励理性探讨、尊重不同想法，希望构建一个包容、务实的协作氛围。
 
 ## 📂 仓库说明
 
 - 🏠 **官网仓库**：本仓库为 OPENHNBC 团队官网源代码，包含首页、公告、导航页面。
-- 📁 **其他项目**：团队全部开源项目（文档库、教学仓库、工具、Demo）均托管在 OPENHNBC 组织下独立仓库，欢迎前往浏览。
 - 📜 **许可证**：网站代码采用 **PolyForm‑Strict‑1.0.0** 许可。
-> 仅允许在线浏览学习，**严禁未经授权下载、复制、离线部署、镜像复刻、二次分发**。
+> 仅允许在线浏览学习，**严禁未经授权下载、复制、离线部署、镜像复刻、二次分发**
 
-## ⚠️ 重要法律与使用声明
+- 📁 **其他项目**：团队全部开源项目（文档库、教学仓库、工具、Demo）均托管在 OPENHNBC 组织下独立仓库，欢迎前往浏览。 [https://github.com/OPENHNBC/] 
 
-1. OPENHNBC（海纳柏舛）组织下全部项目、网页资源、图文素材、前端代码，**仅支持在线浏览学习参考**；未经团队书面授权，禁止私自下载源码、保存页面、导出资源、离线部署、二次分发。
-2. 使用本组织产出的软件、代码，必须遵守中华人民共和国相关法律法规。
-3. 严禁将项目用于破解、外挂、诈骗等各类违法场景。
-4. 私自扒取、离线复用仓库资源，将触发著作权相关法律责任。
+## ⚠️ 使用声明
+1. 使用本组织产出的软件、代码，必须遵守中华人民共和国相关法律法规。
+2. 严禁将项目用于破解、外挂、诈骗等各类违法场景。
 
 ## 🐛 漏洞反馈
 
 如果你发现安全漏洞、功能缺陷、异常行为，请向邮箱：
 `furrynaling@outlook.com`
-提交报告，报告尽量附带复现步骤、环境信息。我们会尽快跟进修复。
+提交报告，报告尽量附带复现步骤、环境信息、问题截图。
+我们会对有效漏洞进行评估，尽快跟进修复，必要时会对报告贡献者予以公开致谢。
 
 ## 💡参与贡献
 
-如果你愿意参与开发、文案撰写、美术设计、社区维护，欢迎通过 GitHub Issue 投递你的参与意向。
+如果你愿意参与开发、文案撰写、美术设计、社区维护，欢迎通邮箱 `furrynaling@outlook.com` 投递你的参与意向。
+ 
+无论你是有开发经验，还是擅长文案、美工、测试、文档整理，都欢迎参与进来。
+提交前可以先浏览已有代码，了解当前项目待办方向；我们会根据项目实际需求，沟通合适的协作方式。
 
-## ❤️ 致谢 & 贡献者
+## ❤️ 致谢开发者 ❤️
 
 感谢团队成员与社区参与者的共建，每一份提交都让项目变得更好。
 
 <p align="left">
-<a href="https://github.com/furrynaling-alt"><img src="https://avatars.githubusercontent.com/u/309368028?v=4" width="50" height="50" alt="" style="max-width: 100%;"></a>
+<a href="https://github.com/furrynaling-alt"><img src="https://avatars.githubusercontent.com/u/309368028?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
+<a href="https://github.com/furrynaling"><img src="https://avatars.githubusercontent.com/u/309594322?v=4
+" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
+<a href="https://github.com/mochen0721"><img src="https://avatars.githubusercontent.com/u/314511176?v=4
+" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
+<a href="https://github.com/MingYue1121"><img src="https://avatars.githubusercontent.com/u/314544975?v=4
+" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
+
+</p>
+
+## 🧡 扩列  & 贡献者
+
+<p align="left">
+<a href="https://github.com/AngHarish"><img src="https://avatars.githubusercontent.com/u/209350675?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
 </p>
 
 ## 📄 License
