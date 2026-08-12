@@ -57,7 +57,7 @@
 
 </p>
 
-## 🧡 扩列  & 贡献者
+## 🧡 鸣谢  & 贡献者
 
 <p align="left">
 <a href="https://github.com/AngHarish"><img src="https://avatars.githubusercontent.com/u/209350675?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
