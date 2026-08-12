@@ -45,8 +45,8 @@
 
 感谢所有社区贡献者提交PR，持续为本项目提供改进。欢迎提交PR参与项目迭代。
 
-<a href="https://github.com/open-HNBC/HNBCTame/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=open-HNBC/HNBCTame" />
+<a href="https://github.com/open-HNBC/HNBCTeam/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=open-HNBC/HNBCTeam" />
 </a>
 
 
