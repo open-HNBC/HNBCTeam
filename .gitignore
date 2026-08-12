@@ -1,0 +1,9 @@
+# HNBC 可推 GitHub 干净副本 —— 仅前端，禁止提交任何机密
+backend/
+cloudbaserc.json
+node_modules/
+.env
+*.local
+__*.txt
+*.log
+.DS_Store

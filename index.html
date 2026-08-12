@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<title>团队 - 纳棂 NALING</title>
+<meta name="description" content="海纳柏舛" />
+<meta name="theme-color" content="#FF8A00" />
+
+<link rel="icon" type="image/png" href="tpzy/n.png" />
+<link rel="shortcut icon" type="image/png" href="tpzy/n.png" />
+<link rel="apple-touch-icon" href="tpzy/n.png" />
+<script src="json/domain-lock.js"></script>
+
+<style>
+  :root{
+    --bg:          #FFFDF9;
+    --bg-soft:     #FFF7EC;
+    --bg-card:    #FFFFFFE6;
+    --primary:     #FF8A00;
+    --primary-2:   #FFB347;
+    --primary-light:#ffb347;
+    --primary-soft:#FFE5BF;
+    --text:        #202124;
+    --text-sub:    #666666;
+    --text-mute:   #9aa0a6;
+    --border:      #FFE5BF;
+    --shadow:      0 10px 40px rgba(255,138,0,.10);
+    --shadow-hover:0 18px 60px rgba(255,138,0,.22);
+    --radius:      20px;
+    --radius-lg:   28px;
+    --maxw:        1200px;
+    --ease:        cubic-bezier(.22,.61,.36,1);
+    --ease-out:    cubic-bezier(.16,1,.3,1);
+    --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "PingFang SC", "Microsoft YaHei", "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: "SF Mono", "JetBrains Mono", "Fira Code",
+                 Consolas, "Courier New", monospace;
+    /* ===== 主题令牌（默认 = 明亮模式） ===== */
+    --ink:        #1d1d24;
+    --ink-2:      rgba(29,29,36,.72);
+    --ink-3:      rgba(29,29,36,.55);
+    --ink-4:      rgba(29,29,36,.42);
+    --glass-1:    rgba(255,255,255,.34);
+    --glass-2:    rgba(255,255,255,.14);
+    --glass-1-h:  rgba(255,255,255,.20);
+    --glass-2-h:  rgba(255,255,255,.07);
+    --glass-brd:  rgba(255,255,255,.55);
+    --glass-brd2: rgba(255,255,255,.32);
+    --glass-in:   rgba(255,255,255,.85);
+    --glass-in2:  rgba(255,255,255,.12);
+    --glass-in-h: rgba(255,255,255,.95);
+    --glass-shadow:    0 10px 44px rgba(0,0,0,.10);
+    --glass-shadow-h:  0 20px 60px rgba(0,0,0,.16);
+    --overlay:    rgba(255,253,249,.45); /* 明亮模式：保留柔和蒙版，保证文字可读 */
+    --title-shadow:    0 2px 12px rgba(255,255,255,.25);
+    --nav-bg-s:   rgba(255,255,255,.34);
+    --nav-brd-s:  rgba(255,255,255,.5);
+    --scrim:      rgba(255,255,255,.6);
+    --icon-filter:    brightness(0);
+    --icon-filter-h:  brightness(0);
+  }
+  [data-theme="dark"]{
+    --ink:        #ffffff;
+    --ink-2:      rgba(255,255,255,.72);
+    --ink-3:      rgba(255,255,255,.65);
+    --ink-4:      rgba(255,255,255,.45);
+    --glass-1:    rgba(255,255,255,.14);
+    --glass-2:    rgba(255,255,255,.05);
+    --glass-1-h:  rgba(255,255,255,.07);
+    --glass-2-h:  rgba(255,255,255,.02);
+    --glass-brd:  rgba(255,255,255,.22);
+    --glass-brd2: rgba(255,255,255,.12);
+    --glass-in:   rgba(255,255,255,.55);
+    --glass-in2:  rgba(255,255,255,.10);
+    --glass-in-h: rgba(255,255,255,.85);
+    --glass-shadow:    0 10px 44px rgba(0,0,0,.16);
+    --glass-shadow-h:  0 20px 60px rgba(0,0,0,.18);
+    --overlay:    rgba(0,0,0,.55);
+    --title-shadow:    0 2px 12px rgba(0,0,0,.3);
+    --nav-bg-s:   rgba(255,255,255,.10);
+    --nav-brd-s:  rgba(255,255,255,.18);
+    --scrim:      rgba(0,0,0,.85);
+    --icon-filter:    brightness(0) invert(1);
+    --icon-filter-h:  brightness(0) invert(1);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  html::-webkit-scrollbar{ width:0; height:0; }
+  html{ scrollbar-width:none; -ms-overflow-style:none; }
+  body{
+    font-family:var(--font-sans);
+    background:
+      url(tpzy/bj.jpg) center/cover no-repeat fixed,
+      #e9eef5;
+    color:var(--ink);
+    line-height:1.7;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:var(--overlay);
+    pointer-events:none;
+  }
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(255,138,0,.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(255,179,71,.05) 0%, transparent 60%);
+    pointer-events:none;
+  }
+
+  .container{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+
+  /* ===== 导航栏（顶部全透明，下滑才出现无色磨砂玻璃） ===== */
+  #navbar{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    padding:18px 0;
+    background:transparent;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    border-bottom:1px solid transparent;
+    box-shadow:none;
+    transition:all .4s var(--ease);
+  }
+  #navbar.scrolled{
+    padding:12px 0;
+    background:var(--nav-bg-s);
+    backdrop-filter:blur(18px) saturate(160%);
+    -webkit-backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--nav-brd-s);
+    box-shadow:
+      0 8px 30px rgba(0,0,0,.12),
+      inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  /* 菜单打开时关掉 navbar 自身模糊：否则 navbar 会成为“背景根”，
+     子级弹层的 backdrop-filter 只会采样 navbar 的白底而失去磨砂效果 */
+  #navbar.menu-open{ backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo{
+    display:flex; align-items:center; gap:10px;
+    font-weight:800; font-size:20px;
+    letter-spacing:.02em;
+    text-decoration:none; color:var(--primary);
+  }
+  .nav-logo .brand-text{
+    font-weight:800; letter-spacing:.06em;
+    background:linear-gradient(135deg, var(--primary), #ffd9a8);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .nav-logo:hover .brand-text{ filter:brightness(1.08); }
+
+  .nav-links{
+    display:flex; align-items:center; gap:8px; list-style:none;
+  }
+  .nav-links a{
+    text-decoration:none; position:relative;
+    padding:8px 16px; font-size:15px;
+    color:var(--ink-2);
+    border-radius:999px;
+    transition:all .3s var(--ease);
+  }
+  .nav-links a::after{
+    content:""; position:absolute;
+    left:50%; bottom:4px;
+    width:0; height:2px;
+    background:var(--primary); border-radius:2px;
+    transform:translateX(-50%);
+    transition:width .3s var(--ease);
+  }
+  .nav-links a:hover{ color:var(--primary); }
+  .nav-links a:hover::after{ width:18px; }
+  .nav-links a.active{
+    color:var(--primary);
+    font-weight:600;
+  }
+  .nav-links a.active::after{ width:18px; background:var(--primary); }
+
+  /* 语言切换 */
+  .lang-switcher{
+    display:flex; align-items:center; gap:4px;
+    padding-left:10px; margin-left:6px;
+    border-left:1px solid var(--glass-brd2);
+  }
+  .lang-btn{
+    padding:6px 10px; border:none; border-radius:8px;
+    background:transparent; color:var(--ink-4);
+    font-size:13px; font-weight:600; cursor:pointer;
+    transition:all .3s var(--ease);
+    font-family:var(--font-sans); line-height:1;
+  }
+  .lang-btn:hover{ color:var(--ink); background:rgba(255,255,255,.15); }
+  .lang-btn.active{
+    color:#fff;
+    background:linear-gradient(135deg, var(--primary), var(--primary-2));
+    box-shadow:0 4px 12px rgba(255,138,0,.3);
+  }
+  .theme-toggle-btn{
+    padding:6px 10px;font-size:13px;font-weight:600;
+    color:var(--text-mute);border-radius:8px;
+    transition:all .3s var(--ease);cursor:pointer;
+    font-family:var(--font-sans);line-height:1;
+    background:transparent;border:none;white-space:nowrap;
+  }
+  .theme-toggle-btn:hover{color:var(--primary);background:rgba(255,138,0,.12);}
+
+  /* 汉堡按钮 */
+  .nav-toggle{
+    display:none; flex-direction:column;
+    background:none; border:none; cursor:pointer;
+    padding:8px; gap:5px;
+  }
+  .nav-toggle span{
+    width:20px; height:2px;
+    background:#fff; border-radius:2px;
+    transition:all .3s var(--ease);
+  }
+  .nav-toggle.active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2){ opacity:0; }
+  .nav-toggle.active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  @media(max-width:900px){
+    .nav-links{
+      display:none;
+    }
+    .nav-links.open{
+      display:flex;
+      position:absolute;
+      top:calc(100% + 14px);
+      left:50%; transform:translateX(-50%);
+      width:min(400px, calc(100vw - 48px));
+      flex-direction:column;
+      background:linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.07));
+      backdrop-filter:blur(26px) saturate(180%);
+      -webkit-backdrop-filter:blur(26px) saturate(180%);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:24px;
+      gap:20px;
+      padding:20px 4px;
+      box-shadow:0 32px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.28);
+      transform-origin:top center;
+      animation:navMenuIn .42s var(--ease) both;
+    }
+    @keyframes navMenuIn{
+      0%{ opacity:0; transform:translateX(-50%) translateY(-16px) scale(.92); }
+      100%{ opacity:1; transform:translateX(-50%) translateY(0) scale(1); }
+    }
+    .nav-links.open a{
+      padding:10px 20px; border-radius:14px; text-align:center;
+      font-size:18px;
+    }
+    .nav-links.open a:hover{ background:rgba(255,138,0,.15); color:var(--primary); }
+    .nav-links.open a::after{ display:none; }
+    .nav-links.open .lang-switcher{
+      display:flex; justify-content:center; flex-wrap:wrap; gap:4px;
+      padding:16px 0 0; margin-top:8px;
+      border-top:none; border-left:none; padding-left:0; margin-left:0;
+    }
+    .nav-links.open .lang-switcher .lang-btn{ padding:8px 14px; font-size:16px; }
+    .nav-toggle{ display:flex; }
+  }
+  @media(max-width:640px){
+    .container{ padding:0 20px; }
+  }
+
+  /* ===== 页面主内容 ===== */
+  main{ padding-top:0; padding-bottom:0; }
+
+  /* ===== 滚动分页 ===== */
+  .page{
+    scroll-snap-align:start;
+    min-height:100vh;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    padding:120px 0 60px;
+    width:100%;
+  }
+  /* ===== 团队标题 ===== */
+  .team-header{
+    text-align:center; margin-bottom:40px;
+    width:100%;
+  }
+  .team-header h1{
+    font-size:clamp(32px, 5vw, 48px);
+    font-weight:800; letter-spacing:-.02em;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .team-header .team-subtitle{
+    font-size:16px; color:var(--ink-3);
+    letter-spacing:.08em;
+    margin-bottom:20px;
+  }
+  .team-header .desc{
+    font-size:16px; color:var(--ink-3);
+    max-width:600px; margin:0 auto;
+    line-height:1.8;
+  }
+
+  /* ===== P1 标题页 ===== */
+  .hero-page{
+    justify-content:center;
+    padding-top:100px;
+  }
+  .hero-page .team-header{
+    max-width:680px;
+  }
+  @keyframes heroFadeIn{
+    0%{ opacity:0; transform:translateY(24px); }
+    100%{ opacity:1; transform:translateY(0); }
+  }
+  .hero-page .team-header h1{
+    animation:heroFadeIn .8s var(--ease-out) .1s both;
+    font-size:clamp(40px, 7vw, 64px);
+    margin-bottom:4px;
+  }
+  .hero-page .team-header .team-subtitle{
+    animation:heroFadeIn .8s var(--ease-out) .25s both;
+    font-size:18px;
+  }
+  .hero-page .team-header .desc{
+    animation:heroFadeIn .8s var(--ease-out) .4s both;
+  }
+
+  /* 关于卡片内 GitHub 小猫 logo + 文字声明（文字不可点击） */
+  .about-github{
+    display:inline-flex; align-items:center; justify-content:center;
+    margin-top:26px;
+  }
+  .about-github-icon{
+    display:inline-flex; align-items:center; justify-content:center;
+    background:transparent; border:none;
+    backdrop-filter:none; -webkit-backdrop-filter:none;
+    transition:all .4s var(--ease);
+  }
+  .about-github-icon img{ width:36px; height:36px; opacity:.8; transition:all .3s var(--ease); }
+  .about-github-icon:hover img{ opacity:1; transform:scale(1.08); }
+  .about-github-text{ font-size:22px; font-weight:700; color:var(--ink-2); letter-spacing:.02em; margin-left:16px; }
+
+  /* P2 人物页标题 */
+  .page-members{ justify-content:flex-start; padding-top:140px; }
+  .section-title{
+    font-size:clamp(24px, 4vw, 36px);
+    font-weight:800;
+    color:var(--ink);
+    letter-spacing:-.01em;
+    text-align:center;
+    margin-bottom:40px;
+    width:100%;
+    text-shadow:var(--title-shadow);
+  }
+
+  /* ===== 成员网格 ===== */
+  .team-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:28px;
+    width:100%;
+    max-width:var(--maxw);
+  }
+  @media(max-width:960px){
+    .team-grid{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media(max-width:520px){
+    .team-grid{ grid-template-columns:1fr; }
+  }
+
+  /* === 液态玻璃卡片 === */
+  .member-card{
+    background:linear-gradient(135deg, var(--glass-1), var(--glass-2));
+    backdrop-filter:blur(12px) saturate(180%);
+    -webkit-backdrop-filter:blur(12px) saturate(180%);
+    border:1px solid var(--glass-brd);
+    border-radius:var(--radius-lg);
+    padding:40px 28px;
+    text-align:center;
+    box-shadow:
+      var(--glass-shadow),
+      inset 0 1px 1px var(--glass-in),
+      inset 0 -1px 1px var(--glass-in2);
+    transition:all .5s var(--ease);
+    position:relative;
+    overflow:hidden;
+    color:var(--ink);
+    will-change:transform;
+  }
+  /* 顶部液态高光 */
+  .member-card::before{
+    content:"";
+    position:absolute; top:0; left:24px; right:24px; height:1px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+    pointer-events:none; z-index:2;
+    transition:all .5s;
+  }
+  /* 液态透光层：柔和对角光晕 */
+  .member-card::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(120% 80% at 0% 0%, rgba(255,255,255,.14), transparent 55%),
+      radial-gradient(120% 80% at 100% 100%, rgba(255,138,0,.12), transparent 55%);
+    pointer-events:none; z-index:0;
+    border-radius:inherit;
+  }
+  .member-card > *{ position:relative; z-index:1; }
+  .member-card:hover{
+    transform:scale(1.03);
+    background:linear-gradient(135deg, var(--glass-1-h), var(--glass-2-h));
+    box-shadow:
+      var(--glass-shadow-h),
+      inset 0 1px 1px var(--glass-in-h),
+      inset 0 -1px 1px var(--glass-in2),
+      0 0 0 1px var(--glass-brd);
+  }
+  .member-card:hover::before{
+    left:14px; right:14px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
+  }
+  /* 液态流光 */
+  .member-card .card-shine{
+    position:absolute; top:-60%; left:-30%; width:160%; height:160%;
+    background:
+      radial-gradient(ellipse 35% 22% at 50% 0%, rgba(255,255,255,.18) 0%, transparent 70%);
+    pointer-events:none; z-index:0;
+    opacity:0; transition:opacity .6s;
+  }
+  .member-card:hover .card-shine{ opacity:1; }
+
+  .member-avatar{
+    width:100px; height:100px;
+    border-radius:50%;
+    margin:0 auto 20px;
+    overflow:hidden;
+    border:3px solid var(--glass-brd2);
+    background:rgba(255,255,255,.05);
+    transition:border-color .4s;
+  }
+  .member-card:hover .member-avatar{ border-color:var(--glass-brd); }
+  .member-avatar img{
+    width:100%; height:100%;
+    object-fit:cover; display:block;
+  }
+  .member-avatar .avatar-placeholder{
+    width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:40px; color:#ffb347;
+    font-weight:700;
+    background:rgba(255,138,0,.1);
+  }
+
+  .member-name{
+    font-size:20px; font-weight:700;
+    letter-spacing:-.01em;
+    margin-bottom:6px;
+    color:var(--ink);
+  }
+  .member-role{
+    display:inline-block;
+    font-size:13px; font-weight:600;
+    color:#ffb347;
+    background:rgba(255,138,0,.15);
+    padding:4px 16px; border-radius:12px;
+    margin-bottom:12px;
+    font-family:var(--font-mono);
+    letter-spacing:.04em;
+  }
+  .member-bio{
+    font-size:14px; color:var(--ink-3);
+    line-height:1.7;
+  }
+
+  /* ===== 成员卡片底部操作栏 ===== */
+  .member-actions{
+    margin-top:20px;
+    display:flex; flex-direction:column;
+    gap:10px;
+  }
+  .member-actions .action-row{
+    display:flex; align-items:center; justify-content:center;
+    gap:12px;
+    font-size:13px; color:var(--ink-2);
+    flex-wrap:wrap;
+  }
+  .member-actions .action-row .action-label{
+    font-weight:600;
+    color:var(--ink-4);
+    letter-spacing:.04em;
+    flex-shrink:0;
+  }
+  .member-actions .action-row .action-icon{
+    width:22px; height:22px;
+    cursor:pointer;
+    transition:all .3s var(--ease);
+    opacity:.8;
+  }
+  .member-actions .action-row .action-icon:hover{
+    opacity:1;
+    transform:scale(1.15);
+  }
+  .member-actions .action-row .action-icon.qq-placeholder{
+    opacity:.35;
+    cursor:default;
+  }
+  .member-actions .action-row .action-icon.qq-placeholder:hover{
+    opacity:.45;
+    transform:none;
+  }
+
+  /* 联系链接 */
+  .member-actions .action-row .contact-link{
+    width:22px; height:22px;
+    cursor:pointer;
+    transition:all .3s var(--ease);
+    opacity:.65;
+    color:var(--ink-2);
+    text-decoration:none;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .member-actions .action-row .contact-link:hover{
+    opacity:1;
+    color:#ffb347;
+    transform:scale(1.15);
+  }
+  .member-actions .action-row .contact-link img{
+    width:100%; height:100%;
+  }
+
+  /* ===== QR 打赏弹窗 ===== */
+  .qr-overlay{
+    display:none;
+    position:absolute; inset:0; z-index:10;
+    background:rgba(255,253,249,.97);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-radius:var(--radius-lg);
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding:20px 16px 24px;
+    animation:qrFadeIn .35s var(--ease);
+  }
+  .qr-overlay.show{
+    display:flex;
+  }
+  @keyframes qrFadeIn{
+    0%{ opacity:0; transform:scale(.94); }
+    100%{ opacity:1; transform:scale(1); }
+  }
+  .qr-overlay-header{
+    width:100%;
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:14px;
+  }
+  .qr-overlay-header span{
+    font-size:15px; font-weight:700;
+    color:var(--primary);
+    letter-spacing:.04em;
+  }
+  .qr-close{
+    width:28px; height:28px;
+    border:none; border-radius:50%;
+    background:var(--primary-soft);
+    color:var(--primary);
+    font-size:16px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:all .3s var(--ease);
+    flex-shrink:0;
+  }
+  .qr-close:hover{ background:var(--primary); color:#fff; }
+
+  .qr-tabs{
+    display:flex; gap:4px;
+    margin-bottom:14px;
+    background:var(--primary-soft);
+    border-radius:10px; padding:3px;
+    width:100%;
+  }
+  .qr-tab{
+    flex:1; padding:7px 6px;
+    border:none; border-radius:8px;
+    background:transparent;
+    font-size:12px; font-weight:600;
+    color:var(--text-sub);
+    cursor:pointer;
+    transition:all .3s var(--ease);
+    font-family:var(--font-sans);
+    display:flex; align-items:center; justify-content:center;
+    gap:4px;
+    white-space:nowrap;
+  }
+  .qr-tab img{ width:14px; height:14px; }
+  .qr-tab.active{
+    background:#fff;
+    color:var(--primary);
+    box-shadow:0 2px 8px rgba(255,138,0,.18);
+  }
+
+  .qr-tab-content{ display:none; width:100%; }
+  .qr-tab-content.active{ display:block; }
+
+  .qr-code-wrap{
+    display:flex; justify-content:center;
+    margin-bottom:10px;
+  }
+  .qr-code-wrap canvas,
+  .qr-code-wrap img{
+    border-radius:12px;
+    padding:6px;
+    background:#fff;
+    box-shadow:0 4px 16px rgba(0,0,0,.06);
+  }
+  .qr-address-label{
+    font-size:11px; color:var(--text-mute);
+    text-align:center; margin-bottom:6px;
+  }
+  .qr-address{
+    font-size:9px; font-family:var(--font-mono);
+    color:var(--text-sub); text-align:center;
+    word-break:break-all;
+    padding:8px 10px;
+    background:var(--bg-soft);
+    border-radius:8px;
+    margin-bottom:10px;
+    line-height:1.5;
+    user-select:all;
+  }
+  .qr-notice{
+    font-size:10px; color:var(--text-mute);
+    text-align:center; margin-top:6px;
+    line-height:1.5;
+  }
+
+  /* ===== P3 关于页 ===== */
+  .about-page{
+    text-align:center;
+    max-width:640px;
+    background:linear-gradient(135deg, var(--glass-1), var(--glass-2));
+    backdrop-filter:blur(12px) saturate(180%);
+    -webkit-backdrop-filter:blur(12px) saturate(180%);
+    border:1px solid var(--glass-brd);
+    border-radius:var(--radius-lg);
+    padding:52px 44px;
+    box-shadow:
+      var(--glass-shadow),
+      inset 0 1px 1px var(--glass-in);
+  }
+  .about-page h2{
+    font-size:clamp(32px, 6vw, 48px);
+    font-weight:800;
+    color:var(--primary);
+    margin-bottom:4px;
+    letter-spacing:-.01em;
+  }
+  .about-subtitle{
+    font-size:clamp(16px, 3vw, 22px);
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:28px;
+    letter-spacing:.04em;
+  }
+  .about-desc{
+    font-size:15px; color:var(--ink-3);
+    line-height:2;
+    max-width:520px; margin:0 auto;
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{ animation:none !important; transition-duration:.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 导航栏 ===== -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="OPEN HNBC" data-i18n-aria="aria.brand">
+      <span class="brand-text" data-i18n="brand">OPEN HNBC</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+      <li><a href="community.html" data-i18n="nav.community">社区</a></li>
+      <li><a href="docs.html" data-i18n="nav.docs">文档</a></li>
+      <li><a href="#" data-i18n="nav.teaching">教学</a></li>
+      <li class="lang-switcher">
+        <button class="lang-btn" data-lang="zh" data-i18n-title="lang.zh" title="简体中文">简</button>
+        <button class="lang-btn" data-lang="zh-TW" data-i18n-title="lang.zhTW" title="繁體中文">繁</button>
+        <button class="lang-btn" data-lang="en" data-i18n-title="lang.en" title="English">EN</button>
+        <button class="theme-toggle-btn" id="themeToggle" title="切换明暗（仅记录偏好，作用于其他页面）">明亮</button>
+      </li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单" data-i18n-aria="aria.menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== 主内容 ===== -->
+<main>
+  <div class="container">
+
+    <!-- ===== P1：标题页 ===== -->
+    <section class="page hero-page" id="page-hero">
+    <div class="team-header">
+      <h1 data-i18n="team.title">HNBC</h1>
+      <p class="team-subtitle" data-i18n="team.tag">海纳柏舛</p>
+      <p class="desc" data-i18n="team.desc">一群志同道合的小伙伴，各自负责不同方向，一起打造属于我们的世界。</p>
+    </div>
+    </section>
+
+    <!-- ===== P2：人物页 ===== -->
+    <section class="page page-members" id="page-members">
+    <h2 class="section-title" data-i18n="team.members.title">团队成员</h2>
+    <div class="team-grid">
+      <!-- 纳棂 -->
+      <div class="member-card" id="member-nl">
+        <div class="card-shine"></div>
+        <div class="member-avatar">
+          <img src="tpzy/nl.jpg" alt="纳棂" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-placeholder" style="display:none;">NL</div>
+        </div>
+        <div class="member-name" data-i18n="member.nl">纳棂</div>
+        <div class="member-role" data-i18n="team.role.be">后端</div>
+        <p class="member-bio" data-i18n="team.bio.nl">处理接口、数据库、账号、订单、鉴权、业务计算；接收前端请求，读写数据，实现业务规则。</p>
+        <div class="member-actions">
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.donate">打赏</span>
+            <img class="action-icon donate-trigger" src="tpzy/bitcoin.svg" alt="Bitcoin" title="Bitcoin" data-mode="crypto" />
+            <img class="action-icon donate-trigger" src="tpzy/wechat-pay.svg" alt="WeChat Pay" title="微信赞赏码" data-mode="wechat" />
+          </div>
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.contact">联系</span>
+            <a href="mailto:**********@*******.***" class="action-icon contact-link" title="Outlook: **********@*******.***">
+              <img src="tpzy/microsoft-outlook-1.svg" alt="Outlook" />
+            </a>
+          </div>
+        </div>
+        <!-- QR 弹窗 -->
+        <div class="qr-overlay" id="qrOverlay">
+          <div class="qr-overlay-header">
+            <span data-i18n="team.donate">打赏</span>
+            <button class="qr-close" id="qrClose">&times;</button>
+          </div>
+          <div class="qr-tabs" id="qrTabs">
+            <button class="qr-tab active" data-chain="btc"><img src="tpzy/bitcoin.svg" alt="BTC" /> <span data-i18n="team.donateBtc">比特币</span></button>
+            <button class="qr-tab" data-chain="eth"><img src="tpzy/ethereum-1.svg" alt="ETH" /> <span data-i18n="team.donateEth">以太坊</span></button>
+            <button class="qr-tab" data-chain="trx"><img src="tpzy/tron.svg" alt="TRX" /> <span data-i18n="team.donateTrx">波场</span></button>
+            <button class="qr-tab" data-chain="wechat"><img src="tpzy/wechat-pay.svg" alt="微信" /> <span data-i18n="team.donateWechat">微信赞赏</span></button>
+          </div>
+          <div class="qr-tab-content active" id="qr-btc">
+            <div class="qr-code-wrap"><div id="qrcode-btc"></div></div>
+            <div class="qr-address-label" data-i18n="team.donateBtcNote">仅支持Bitcoin资产（不支持Ordinals、BRC20等铭文资产）</div>
+            <div class="qr-address" data-addr="bc1plf7y7p66gfnu943hxk3jt3flqta935e7g3j428ec5lgsffeuexhs7y9z5y">bc1plf7y7p66gfnu943hxk3jt3flqta935e7g3j428ec5lgsffeuexhs7y9z5y</div>
+          </div>
+          <div class="qr-tab-content" id="qr-eth">
+            <div class="qr-code-wrap"><div id="qrcode-eth"></div></div>
+            <div class="qr-address-label" data-i18n="team.donateEthNote">仅支持Ethereum / USDT-ERC20资产</div>
+            <div class="qr-address" data-addr="0x7194257c112306D04Bea678052349Cbf23c35B31">0x7194257c112306D04Bea678052349Cbf23c35B31</div>
+          </div>
+          <div class="qr-tab-content" id="qr-trx">
+            <div class="qr-code-wrap"><div id="qrcode-trx"></div></div>
+            <div class="qr-address-label" data-i18n="team.donateTrxNote">仅支持Tron / USDT-TRC20资产</div>
+            <div class="qr-address" data-addr="TShjucLLa91ZSSCxTqgP1E2MQkUpVEKz93">TShjucLLa91ZSSCxTqgP1E2MQkUpVEKz93</div>
+          </div>
+          <div class="qr-tab-content" id="qr-wechat">
+            <div class="qr-code-wrap">
+              <img src="tpzy/nlzsm.jpg" alt="微信赞赏码" style="width:220px;height:220px;border-radius:12px;padding:6px;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.06);" />
+            </div>
+            <div class="qr-address-label">微信赞赏码</div>
+            <div class="qr-notice">请使用微信扫一扫识别赞赏码<br/>普通解码器无法识别微信赞赏码</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 喏欣 -->
+      <div class="member-card">
+        <div class="card-shine"></div>
+        <div class="member-avatar">
+          <img src="tpzy/rx.jpg" alt="喏欣" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-placeholder" style="display:none;">NX</div>
+        </div>
+        <div class="member-name" data-i18n="member.nx">喏欣</div>
+        <div class="member-role" data-i18n="team.role.ops">运维</div>
+        <p class="member-bio" data-i18n="team.bio.nx">部署项目、配置服务器、备份、监控告警、防火墙、排故障、扩容，保障服务不崩。</p>
+        <div class="member-actions">
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.donate">打赏</span>
+          </div>
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.contact">联系</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 明月 -->
+      <div class="member-card">
+        <div class="card-shine"></div>
+        <div class="member-avatar">
+          <img src="tpzy/my.jpg" alt="明月" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-placeholder" style="display:none;">MY</div>
+        </div>
+        <div class="member-name">明月</div>
+        <div class="member-role" data-i18n="team.role.fe">前端</div>
+        <p class="member-bio" data-i18n="team.bio.my">网站、APP页面、按钮、布局、动画，做界面交互，让用户点得动、看得舒服。</p>
+        <div class="member-actions">
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.donate">打赏</span>
+          </div>
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.contact">联系</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 陌晨 -->
+      <div class="member-card">
+        <div class="card-shine"></div>
+        <div class="member-avatar">
+          <img src="tpzy/mc.jpg" alt="陌晨" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-placeholder" style="display:none;">MC</div>
+        </div>
+        <div class="member-name" data-i18n="member.mc">陌晨</div>
+        <div class="member-role" data-i18n="team.role.audit">审计</div>
+        <p class="member-bio" data-i18n="team.bio.mc">审查代码、接口、日志；发现越权、注入、泄露问题；做安全核查，规避被攻击、数据泄露。</p>
+        <div class="member-actions">
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.donate">打赏</span>
+          </div>
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.contact">联系</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 凌深 -->
+      <div class="member-card">
+        <div class="card-shine"></div>
+        <div class="member-avatar">
+          <img src="tpzy/ls.jpg" alt="凌深" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-placeholder" style="display:none;">LS</div>
+        </div>
+        <div class="member-name" data-i18n="member.ls">凌深</div>
+        <div class="member-role" data-i18n="team.role.art">美术</div>
+        <p class="member-bio" data-i18n="team.bio.ls">负责建模、IP 插图、海报与宣传素材，用视觉语言呈现世界观，把控整体美术风格与作品质感。</p>
+        <div class="member-actions">
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.donate">打赏</span>
+          </div>
+          <div class="action-row">
+            <span class="action-label" data-i18n="team.contact">联系</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- ===== P3：关于 ===== -->
+    <section class="page" id="page-about">
+    <div class="about-page">
+      <h2 data-i18n="team.info.title">HNBC</h2>
+      <p class="about-subtitle" data-i18n="team.info.name">海纳柏舛</p>
+      <p class="about-desc" data-i18n="team.info.desc">一群志同道合的小伙伴，各自负责不同方向，一起打造属于我们的世界。HNBC 是一个多元化的创作团体，涵盖音乐制作、视觉设计、数字艺术、策略运营等多个领域。我们相信协作的力量，每个人在各自擅长的方向上发光发热。</p>
+      <div class="about-github">
+        <a href="https://github.com/OPENHNBC" target="_blank" rel="noopener" class="about-github-icon" aria-label="GitHub">
+          <img src="tpzy/github.svg" alt="GitHub" />
+        </a>
+        <span class="about-github-text">HNBC(海纳柏舛)</span>
+      </div>
+    </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="json/i18n/zh.js"></script>
+<script src="json/i18n/zh-TW.js"></script>
+<script src="json/i18n/en.js"></script>
+<script src="json/i18n/core.js"></script>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===== 导航栏滚动状态（始终液态玻璃，滚动更紧凑） ===== */
+  var navbar = document.getElementById("navbar");
+  function syncNavbar(){
+    if(window.scrollY > 10) navbar.classList.add("scrolled");
+    else navbar.classList.remove("scrolled");
+  }
+  window.addEventListener("scroll", syncNavbar, { passive:true });
+  syncNavbar();
+
+  /* ===== 移动端导航开关 ===== */
+  var navbar = document.getElementById("navbar");
+  var navToggle = document.getElementById("navToggle");
+  var navLinks = document.getElementById("navLinks");
+  navToggle.addEventListener("click", function(){
+    navLinks.classList.toggle("open");
+    navToggle.classList.toggle("active");
+    navbar.classList.toggle("menu-open");
+  });
+
+  /* ===== 多语言（外部语言包 json/i18n/） ===== */
+  window.onI18nApplied = function(lang){
+    document.title = window.I18N.t("home.title");
+    if(qrOverlay && qrOverlay.classList.contains("show")){
+      var h = qrOverlay.querySelector(".qr-overlay-header span");
+      if(h) h.textContent = (currentQrMode === "wechat") ? window.I18N.t("team.donateWechat") : window.I18N.t("team.donate");
+    }
+  };
+  window.I18N.init();
+
+  /* ===== 导航栏 active 状态切换 ===== */
+  var currentPage = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a[data-i18n]").forEach(function(link){
+    var href = link.getAttribute("href");
+    if(href === currentPage) link.classList.add("active");
+    else link.classList.remove("active");
+  });
+
+  /* ===== QR 打赏弹窗逻辑 ===== */
+  var qrOverlay = document.getElementById("qrOverlay");
+  var qrClose = document.getElementById("qrClose");
+  var memberCard = document.getElementById("member-nl");
+  var qrGenerated = {};
+  var currentQrMode = null;
+  var qrSizes = { btc:null, eth:null, trx:null };
+
+  // 地址映射
+  var addrs = {
+    btc: "bc1plf7y7p66gfnu943hxk3jt3flqta935e7g3j428ec5lgsffeuexhs7y9z5y",
+    eth: "0x7194257c112306D04Bea678052349Cbf23c35B31",
+    trx: "TShjucLLa91ZSSCxTqgP1E2MQkUpVEKz93"
+  };
+
+  function getQrSize(){
+    if(window.innerWidth < 480) return 140;
+    return 180;
+  }
+
+  function genQr(chain){
+    // 微信赞赏码使用静态图片，不需要生成QR
+    if(chain === "wechat") return;
+    if(qrGenerated[chain] && qrSizes[chain] === getQrSize()) return;
+    var container = document.getElementById("qrcode-" + chain);
+    if(!container) return;
+    container.innerHTML = "";
+    var size = getQrSize();
+    try{
+      new QRCode(container, {
+        text: addrs[chain],
+        width: size,
+        height: size,
+        colorDark: "#202124",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+      qrGenerated[chain] = true;
+      qrSizes[chain] = size;
+    }catch(e){
+      container.innerHTML = '<div style="width:'+size+'px;height:'+size+'px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;">QR Error</div>';
+    }
+  }
+
+  function openQrOverlay(mode){
+    if(!qrOverlay) return;
+    currentQrMode = mode;
+    qrOverlay.classList.add("show");
+    var header = qrOverlay.querySelector(".qr-overlay-header span");
+    var tabsRow = document.getElementById("qrTabs");
+    var contents = qrOverlay.querySelectorAll(".qr-tab-content");
+
+    // 隐藏所有 tab 内容
+    contents.forEach(function(c){ c.classList.remove("active"); });
+
+    if(mode === "wechat"){
+      // 微信模式：隐藏标签栏，只显示微信内容
+      if(header) header.textContent = window.I18N.t("team.donateWechat");
+      if(tabsRow) tabsRow.style.display = "none";
+      var wechatContent = document.getElementById("qr-wechat");
+      if(wechatContent) wechatContent.classList.add("active");
+    } else {
+      // 加密货币模式：显示三标签，默认 BTC
+      if(header) header.textContent = window.I18N.t("team.donate");
+      if(tabsRow) tabsRow.style.display = "";
+      // 隐藏微信标签页
+      var wechatTab = qrOverlay.querySelector('[data-chain="wechat"]');
+      if(wechatTab) wechatTab.style.display = "none";
+      // 高亮并显示 BTC
+      genQr("btc");
+      var tabs = qrOverlay.querySelectorAll(".qr-tab");
+      tabs.forEach(function(t){ t.classList.remove("active"); });
+      var btcTab = qrOverlay.querySelector('[data-chain="btc"]');
+      var btcContent = document.getElementById("qr-btc");
+      if(btcTab) btcTab.classList.add("active");
+      if(btcContent) btcContent.classList.add("active");
+    }
+  }
+
+  function closeQrOverlay(){
+    if(!qrOverlay) return;
+    qrOverlay.classList.remove("show");
+    currentQrMode = null;
+    // 重置状态
+    var tabsRow = document.getElementById("qrTabs");
+    var wechatTab = qrOverlay.querySelector('[data-chain="wechat"]');
+    if(tabsRow) tabsRow.style.display = "";
+    if(wechatTab) wechatTab.style.display = "";
+  }
+
+  // 打赏图标点击
+  var donateTriggers = document.querySelectorAll("#member-nl .donate-trigger");
+  donateTriggers.forEach(function(icon){
+    icon.addEventListener("click", function(e){
+      e.stopPropagation();
+      var mode = icon.getAttribute("data-mode") || "crypto";
+      openQrOverlay(mode);
+    });
+  });
+
+  // 关闭按钮
+  if(qrClose){
+    qrClose.addEventListener("click", function(e){
+      e.stopPropagation();
+      closeQrOverlay();
+    });
+  }
+
+  // Tab 切换 & 复制 & 分享（事件委托在 overlay 上）
+  if(qrOverlay){
+    qrOverlay.addEventListener("click", function(e){
+      // Tab 切换
+      var tab = e.target.closest(".qr-tab");
+      if(tab){
+        var chain = tab.getAttribute("data-chain");
+        if(!chain) return;
+        qrOverlay.querySelectorAll(".qr-tab").forEach(function(t){ t.classList.remove("active"); });
+        tab.classList.add("active");
+        qrOverlay.querySelectorAll(".qr-tab-content").forEach(function(c){ c.classList.remove("active"); });
+        var content = document.getElementById("qr-" + chain);
+        if(content) content.classList.add("active");
+        genQr(chain);
+        return;
+      }
+      e.stopPropagation();
+    });
+  }
+
+})();
+
+/* ===== 主题切换：首页视觉固定深色，仅把偏好写入存储，供其他页面生效 ===== */
+(function(){
+  var KEY = "naling-theme";
+  var btn = document.getElementById("themeToggle");
+  if(!btn) return;
+  function getStored(){
+    try { return localStorage.getItem(KEY) || "dark"; } catch(e){ return "dark"; }
+  }
+  function setStored(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+  function updateLabel(){
+    var isDark = getStored() === "dark";
+    // 文案显示“目标模式”：当前为暗则提示可切到明亮，反之亦然
+    btn.textContent = window.I18N.t(isDark ? "theme.light" : "theme.dark");
+  }
+  // 首页排版固定深色，点击只记录偏好，不改变本页外观
+  document.documentElement.setAttribute("data-theme", "dark");
+  updateLabel();
+  btn.addEventListener("click", function(){
+    var next = getStored() === "dark" ? "light" : "dark";
+    setStored(next);
+    updateLabel();
+  });
+  window.addEventListener("i18n:applied", updateLabel);
+})();
+</script>
+
+</body>
+</html>
