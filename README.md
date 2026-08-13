@@ -54,7 +54,7 @@
 <a href="https://github.com/furrynaling"><img src="https://avatars.githubusercontent.com/u/309594322?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
 <a href="https://github.com/mochen0721"><img src="https://avatars.githubusercontent.com/u/314511176?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
 <a href="https://github.com/MingYue1121"><img src="https://avatars.githubusercontent.com/u/314544975?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
-
+<a href="https://b23.tv/auuAqvG"><img src="https://i2.hdslb.com/bfs/face/5c8d5b840a22e8adef76e2a2e4123dd7b7071925.jpg@168w_168h_1c.webp" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
 </p>
 
 ## 🧡 鸣谢  & 贡献者
