@@ -52,7 +52,6 @@
 从新手到核心，从旁观到主笔，感谢每一位在项目成长路上留下足迹的开发者。
 
 <p align="left">
-<a href="https://github.com/OPENHNBC"><img src="" width="52.0" height="52.0" alt="https://avatars.githubusercontent.com/u/314865349?s=400&u=80000861f8207bd839c5cf7f054d5f87d316248a&v=4" style="max-width: 100%;"></a>
 <a href="https://github.com/furrynaling-alt"><img src="https://avatars.githubusercontent.com/u/309368028?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
 <a href="https://github.com/furrynaling"><img src="https://avatars.githubusercontent.com/u/309594322?v=4" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
 <a href="https://b23.tv/auuAqvG"><img src="https://i2.hdslb.com/bfs/face/5c8d5b840a22e8adef76e2a2e4123dd7b7071925.jpg@168w_168h_1c.webp" width="52.0" height="52.0" alt="" style="max-width: 100%;"></a>
