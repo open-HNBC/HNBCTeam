@@ -4,9 +4,10 @@
 
 ## 🌐 访问我们
 
-- **官方网站**：[openhnbc.com](https://openhnbc.com)     [openhnbc.cn](https://openhnbc.cn)
-- **GitHub 组织项目**：[https://github.com/OPENHNBC/](https://github.com/OPENHNBC/)
-- **GitHub 组织主页**：[https://github.com/open-HNBC/HNBCTeam](https://github.com/open-HNBC/HNBCTeam)
+- **官方网站**：[openhnbc.com](https://openhnbc.com)    &     [openhnbc.cn](https://openhnbc.cn)
+- **组织主页**：[https://github.com/open-HNBC/HNBCTeam](https://github.com/open-HNBC/HNBCTeam)
+- **GitHub OPENHNBC 组织项目**：[https://github.com/OPENHNBC/](https://github.com/OPENHNBC/)
+
 
 组织项目内存放团队全部公开项目、源代码、文档与教程。
 
